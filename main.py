@@ -49,3 +49,26 @@ for col in numeric_cols:
 print("Outliers detected using Z-score method:")
 for col, count in outliers_by_column.items():
     print(f"{col}: {count} outliers")
+
+# Free vs Paid Courses by Subject
+free_paid_subject = df.groupby(['subject', 'is_paid']).size().unstack().fillna(0)
+free_paid_subject.plot(kind='bar', figsize=(10, 6), stacked=True, colormap='Set2')
+plt.title(' Free vs Paid Courses by Subject')
+plt.xlabel('Subject')
+plt.ylabel('Number of Courses')
+plt.xticks(rotation=45)
+plt.legend(title='Is Paid')
+plt.tight_layout()
+plt.show()
+
+# Optimal Course Duration
+duration_vs_subscribers = df.groupby('content_duration')['num_subscribers'].sum().sort_index()
+
+plt.figure(figsize=(10,6))
+plt.plot(duration_vs_subscribers.index, duration_vs_subscribers.values, color='green', linewidth=2)
+plt.title('Number of Subscribers vs Course Duration')
+plt.xlabel('Course Duration (in hours)')
+plt.ylabel('Number of Subscribers')
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
