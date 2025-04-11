@@ -90,3 +90,16 @@ reviews_by_level = filtered_df.groupby('level')['num_reviews'].sum()
 labels = ['Beginner Level', 'Intermediate Level', 'Expert Level']
 skyblue_colors = ['#87CEEB', '#ADD8E6', '#B0E0E6']  
 plt.figure(figsize=(8,6))
+wedges, texts, autotexts = plt.pie(
+    reviews_by_level,
+    labels=labels,
+    autopct='%1.1f%%',
+    startangle=140,
+    colors=skyblue_colors,
+    wedgeprops={'linewidth': 1, 'edgecolor': 'white'},
+    textprops={'fontsize': 12, 'color': 'black'}
+)
+plt.title('Review Distribution by Course Level', fontsize=14, weight='bold', pad=30)
+plt.axis('equal')
+plt.tight_layout()
+plt.show()
