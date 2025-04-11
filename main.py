@@ -82,3 +82,11 @@ plt.xlabel('Number of Subscribers')
 plt.ylabel('Course Title')
 plt.tight_layout()
 plt.show()
+
+
+# Course Reviews by Difficulty Level
+filtered_df = df[df['level'] != 'All Levels']
+reviews_by_level = filtered_df.groupby('level')['num_reviews'].sum()
+labels = ['Beginner Level', 'Intermediate Level', 'Expert Level']
+skyblue_colors = ['#87CEEB', '#ADD8E6', '#B0E0E6']  
+plt.figure(figsize=(8,6))
