@@ -103,3 +103,17 @@ plt.title('Review Distribution by Course Level', fontsize=14, weight='bold', pad
 plt.axis('equal')
 plt.tight_layout()
 plt.show()
+
+# Trends in Course Creation Over Time
+df['publish_year'] = pd.to_datetime(df['published_timestamp']).dt.year
+yearly_counts = df['publish_year'].value_counts().sort_index()
+full_years = pd.Series(index=range(df['publish_year'].min(), df['publish_year'].max() + 1), dtype=int)
+yearly_counts_full = full_years.add(yearly_counts, fill_value=0)
+plt.figure(figsize=(10, 6))
+plt.plot(yearly_counts_full.index, yearly_counts_full.values, marker='o', color='darkorange', linewidth=2)
+plt.title(' Course Upload Trend by Year', fontsize=14)
+plt.xlabel('Year')
+plt.ylabel('Number of Courses Published')
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
