@@ -6,6 +6,7 @@ import seaborn as sns
 df = pd.read_csv("udemy_courses.csv")
 
 # Cleaning
+df['content_duration'] = df['content_duration'].fillna(method='ffill')
 df.drop_duplicates(inplace=True)
 df['price'] = df['price'].replace('Free', 0).astype(int)
 df['published_timestamp'] = pd.to_datetime(df['published_timestamp'], errors='coerce')
