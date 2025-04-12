@@ -117,3 +117,18 @@ plt.ylabel('Number of Courses Published')
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
+
+
+# Courses Published by Day of the Week
+df['published_day'] = pd.to_datetime(df['published_timestamp']).dt.day_name()
+day_counts = df['published_day'].value_counts().reindex([
+    'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+])
+plt.figure(figsize=(8, 5))
+sns.barplot(x=day_counts.index, y=day_counts.values, palette='pastel')
+plt.title(' Courses Published by Day of the Week')
+plt.xlabel('Day of Week')
+plt.ylabel('Number of Courses')
+plt.tight_layout()
+plt.show()
+
