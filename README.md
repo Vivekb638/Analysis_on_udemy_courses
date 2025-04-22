@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a58cfd0a-ed0a-4dc5-9330-cf9a2c485eee)📊 Udemy Courses Data Analysis Project
+📊 Udemy Courses Data Analysis Project
 This project is an Exploratory Data Analysis (EDA) of the Udemy Courses Dataset. The objective is to extract meaningful insights and visualize patterns in online education offerings through Python-based data analysis.
 
 🧠 Project Objectives
