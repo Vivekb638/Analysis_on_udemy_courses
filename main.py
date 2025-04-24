@@ -5,7 +5,7 @@ import seaborn as sns
 # Load the dataset
 df = pd.read_csv("udemy_courses.csv")
 
-# Cleaning
+# Cleaning the dataset
 df['content_duration'] = df['content_duration'].fillna(method='ffill')
 df.drop_duplicates(inplace=True)
 df['price'] = df['price'].replace('Free', 0).astype(int)
