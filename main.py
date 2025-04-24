@@ -63,7 +63,7 @@ plt.legend(title='Is Paid')
 plt.tight_layout()
 plt.show()
 
-# Optimal Course Duration
+# objective 2:-Optimal Course Duration
 duration_vs_subscribers = df.groupby('content_duration')['num_subscribers'].sum().sort_index()
 
 plt.figure(figsize=(10,6))
@@ -75,7 +75,7 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.tight_layout()
 plt.show()
 
-# Most Popular Course Titles
+#objective 3:- Most Popular Course Titles
 top_courses = df[['course_title', 'num_subscribers']].sort_values(by='num_subscribers', ascending=False).head(10)
 plt.figure(figsize=(10, 6))
 sns.barplot(y='course_title', x='num_subscribers', data=top_courses, palette='viridis')
