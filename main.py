@@ -52,7 +52,7 @@ print("Outliers detected using Z-score method:")
 for col, count in outliers_by_column.items():
     print(f"{col}: {count} outliers")
 
-# Free vs Paid Courses by Subject
+# Objective:- 1 Free vs Paid Courses by Subject
 free_paid_subject = df.groupby(['subject', 'is_paid']).size().unstack().fillna(0)
 free_paid_subject.plot(kind='bar', figsize=(10, 6), stacked=True, colormap='Set2')
 plt.title(' Free vs Paid Courses by Subject')
