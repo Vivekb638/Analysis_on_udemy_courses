@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load the dataset
+# load the csv dataset
 df = pd.read_csv("udemy_courses.csv")
 
 # Cleaning
