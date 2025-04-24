@@ -11,7 +11,7 @@ df.drop_duplicates(inplace=True)
 df['price'] = df['price'].replace('Free', 0).astype(int)
 df['published_timestamp'] = pd.to_datetime(df['published_timestamp'], errors='coerce')
 
-#EDA
+#Exploratory Data analysis
 print("Summary of dataset:\n")
 print(df.info())
 print("Summary Statistics:\n")
